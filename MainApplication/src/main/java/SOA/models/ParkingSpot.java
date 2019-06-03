@@ -1,43 +1,51 @@
 package SOA.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
 public class ParkingSpot {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int parkingSpotId;
+    private Integer parkingSpotId;
+
+    @NotNull
+    private boolean available;
 
     @ManyToOne
-    @JoinColumn(name = "regionId")
-    private Region region;
+    @JoinColumn(name = "streetId")
+    private Street street;
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "parkingSpotId")
-    private List<Availability> availabilityList;
+    private Tickets ticket;
 
-    public int getParkingSpotId() {
+    public Integer getParkingSpotId() {
         return parkingSpotId;
     }
 
-    public void setParkingSpotId(int parkingSpotId) {
-        this.parkingSpotId = parkingSpotId;
+    public boolean isAvailable() {
+        return available;
     }
 
-    public Region getRegion() {
-        return region;
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
-    public void setRegion(Region region) {
-        this.region = region;
+    public Street getStreet() {
+        return street;
     }
 
-    public List<Availability> getAvailabilityList() {
-        return availabilityList;
+    public void setStreet(Street street) {
+        this.street = street;
     }
 
-    public void setAvailabilityList(List<Availability> availabilityList) {
-        this.availabilityList = availabilityList;
+    public Tickets getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Tickets ticket) {
+        this.ticket = ticket;
     }
 }

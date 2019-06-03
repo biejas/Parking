@@ -1,26 +1,29 @@
 package SOA.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int employeeId;
+    private Integer employeeId;
 
+    @NotNull
     private String username;
+
+    @NotNull
     private String password;
-    private boolean isAdmin;
 
-    public int getEmployeeId() {
+    @NotNull
+    private boolean admin;
+
+    @ManyToOne
+    @JoinColumn(name = "regionId")
+    private Region region;
+
+    public Integer getEmployeeId() {
         return employeeId;
-    }
-
-    public void setEmployeeId(int userId) {
-        this.employeeId = userId;
     }
 
     public String getUsername() {
@@ -40,10 +43,18 @@ public class Employee {
     }
 
     public boolean isAdmin() {
-        return isAdmin;
+        return admin;
     }
 
     public void setAdmin(boolean admin) {
-        isAdmin = admin;
+        this.admin = admin;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
     }
 }

@@ -8,7 +8,7 @@
       <ObjectId>16551</ObjectId>
       <StateNumber>703</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>4162</IntrospectionStateNumber>
+      <IntrospectionStateNumber>4199</IntrospectionStateNumber>
       <Visible>1</Visible>
       <Relations>sequence|table|23194|23196|1
 sequence|table|23205|23207|1
@@ -90,7 +90,7 @@ sequence|table|23221|23223|1
       <Comment>standard public schema</Comment>
       <StateNumber>607</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>4163</IntrospectionStateNumber>
+      <IntrospectionStateNumber>4200</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -133,9 +133,9 @@ sequence|table|23221|23223|1
       <SchemaId>11</SchemaId>
     </extension>
     <sequence id="21" parent="13" name="hibernate_sequence">
-      <ObjectId>23458</ObjectId>
+      <ObjectId>23529</ObjectId>
       <Owner>agnieszka</Owner>
-      <StateNumber>4148</StateNumber>
+      <StateNumber>4183</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
@@ -172,50 +172,50 @@ sequence|table|23221|23223|1
       <Owner>agnieszka</Owner>
       <StateNumber>3957</StateNumber>
     </table>
-    <table id="27" parent="13" name="availability">
-      <ObjectId>23460</ObjectId>
-      <Owner>agnieszka</Owner>
-      <StateNumber>4156</StateNumber>
-    </table>
-    <table id="28" parent="13" name="book">
+    <table id="27" parent="13" name="book">
       <ObjectId>16806</ObjectId>
       <Owner>agnieszka</Owner>
       <StateNumber>1091</StateNumber>
     </table>
-    <table id="29" parent="13" name="book1">
+    <table id="28" parent="13" name="book1">
       <ObjectId>23207</ObjectId>
       <Owner>agnieszka</Owner>
       <StateNumber>3959</StateNumber>
     </table>
-    <table id="30" parent="13" name="employee">
-      <ObjectId>23465</ObjectId>
+    <table id="29" parent="13" name="employee">
+      <ObjectId>23531</ObjectId>
       <Owner>agnieszka</Owner>
-      <StateNumber>4160</StateNumber>
+      <StateNumber>4191</StateNumber>
     </table>
-    <table id="31" parent="13" name="filmy">
+    <table id="30" parent="13" name="filmy">
       <ObjectId>23349</ObjectId>
       <Owner>agnieszka</Owner>
       <StateNumber>4056</StateNumber>
     </table>
-    <table id="32" parent="13" name="lend">
+    <table id="31" parent="13" name="lend">
       <ObjectId>23215</ObjectId>
       <Owner>agnieszka</Owner>
       <StateNumber>3960</StateNumber>
     </table>
-    <table id="33" parent="13" name="movies">
+    <table id="32" parent="13" name="movies">
       <ObjectId>23380</ObjectId>
       <Owner>agnieszka</Owner>
       <StateNumber>4071</StateNumber>
     </table>
-    <table id="34" parent="13" name="parkingmeter">
-      <ObjectId>23473</ObjectId>
+    <table id="33" parent="13" name="parkingmeter">
+      <ObjectId>23539</ObjectId>
       <Owner>agnieszka</Owner>
-      <StateNumber>4161</StateNumber>
+      <StateNumber>4197</StateNumber>
     </table>
-    <table id="35" parent="13" name="parkingspot">
-      <ObjectId>23478</ObjectId>
+    <table id="34" parent="13" name="parkingspot">
+      <ObjectId>23544</ObjectId>
       <Owner>agnieszka</Owner>
-      <StateNumber>4159</StateNumber>
+      <StateNumber>4198</StateNumber>
+    </table>
+    <table id="35" parent="13" name="purchases">
+      <ObjectId>23549</ObjectId>
+      <Owner>agnieszka</Owner>
+      <StateNumber>4195</StateNumber>
     </table>
     <table id="36" parent="13" name="reader">
       <ObjectId>23223</ObjectId>
@@ -223,26 +223,31 @@ sequence|table|23221|23223|1
       <StateNumber>3960</StateNumber>
     </table>
     <table id="37" parent="13" name="region">
-      <ObjectId>23483</ObjectId>
+      <ObjectId>23554</ObjectId>
       <Owner>agnieszka</Owner>
-      <StateNumber>4160</StateNumber>
+      <StateNumber>4196</StateNumber>
     </table>
-    <table id="38" parent="13" name="student">
+    <table id="38" parent="13" name="street">
+      <ObjectId>23559</ObjectId>
+      <Owner>agnieszka</Owner>
+      <StateNumber>4196</StateNumber>
+    </table>
+    <table id="39" parent="13" name="student">
       <ObjectId>16687</ObjectId>
       <Owner>agnieszka</Owner>
       <StateNumber>881</StateNumber>
     </table>
-    <table id="39" parent="13" name="tickets">
-      <ObjectId>23488</ObjectId>
+    <table id="40" parent="13" name="tickets">
+      <ObjectId>23564</ObjectId>
       <Owner>agnieszka</Owner>
-      <StateNumber>4161</StateNumber>
+      <StateNumber>4198</StateNumber>
     </table>
-    <table id="40" parent="13" name="users">
+    <table id="41" parent="13" name="users">
       <ObjectId>23388</ObjectId>
       <Owner>agnieszka</Owner>
       <StateNumber>4071</StateNumber>
     </table>
-    <column id="41" parent="26" name="id">
+    <column id="42" parent="26" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -250,160 +255,96 @@ sequence|table|23221|23223|1
       <DefaultExpression>nextval(&apos;author_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="42" parent="26" name="name">
+    <column id="43" parent="26" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>3953</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="43" parent="26" name="surname">
+    <column id="44" parent="26" name="surname">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>3953</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="44" parent="26" name="author_pkey">
+    <index id="45" parent="26" name="author_pkey">
       <ObjectId>23203</ObjectId>
       <StateNumber>3953</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="45" parent="26" name="author_pkey">
+    <key id="46" parent="26" name="author_pkey">
       <ObjectId>23204</ObjectId>
       <StateNumber>3953</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>author_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="46" parent="27" name="availabilityid">
-      <Position>1</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>4149</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="47" parent="27" name="endtime">
-      <Position>2</Position>
-      <DataType>timestamp|0s</DataType>
-      <StateNumber>4149</StateNumber>
-      <TypeId>1114</TypeId>
-    </column>
-    <column id="48" parent="27" name="starttime">
-      <Position>3</Position>
-      <DataType>timestamp|0s</DataType>
-      <StateNumber>4149</StateNumber>
-      <TypeId>1114</TypeId>
-    </column>
-    <column id="49" parent="27" name="parkingspotid">
-      <Position>4</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>4149</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="50" parent="27" name="ticketsid">
-      <Position>5</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>4149</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <index id="51" parent="27" name="availability_pkey">
-      <ObjectId>23463</ObjectId>
-      <StateNumber>4149</StateNumber>
-      <ColNames>availabilityid</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="52" parent="27" name="availability_pkey">
-      <ObjectId>23464</ObjectId>
-      <StateNumber>4149</StateNumber>
-      <ColNames>availabilityid</ColNames>
-      <UnderlyingIndexName>availability_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="53" parent="27" name="fk9b5yd01cnw9wpst121p860ge4">
-      <ObjectId>23493</ObjectId>
-      <StateNumber>4155</StateNumber>
-      <ColNames>parkingspotid</ColNames>
-      <RefTableId>23478</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>parkingspot</RefTableName>
-      <RefKeyName>parkingspot_pkey</RefKeyName>
-      <RefColNames>parkingspotid</RefColNames>
-    </foreign-key>
-    <foreign-key id="54" parent="27" name="fko4ol7oa6vq3qechedq9pewxnx">
-      <ObjectId>23498</ObjectId>
-      <StateNumber>4156</StateNumber>
-      <ColNames>ticketsid</ColNames>
-      <RefTableId>23488</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>tickets</RefTableName>
-      <RefKeyName>tickets_pkey</RefKeyName>
-      <RefColNames>ticketsid</RefColNames>
-    </foreign-key>
-    <column id="55" parent="28" name="id">
+    <column id="47" parent="27" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1091</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="56" parent="28" name="isbn">
+    <column id="48" parent="27" name="isbn">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1091</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="57" parent="28" name="name">
+    <column id="49" parent="27" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1091</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="58" parent="28" name="price">
+    <column id="50" parent="27" name="price">
       <Position>4</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1091</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="59" parent="28" name="surname">
+    <column id="51" parent="27" name="surname">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1091</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="60" parent="28" name="title">
+    <column id="52" parent="27" name="title">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1091</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="61" parent="28" name="year">
+    <column id="53" parent="27" name="year">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1091</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="62" parent="28" name="book_pkey1">
+    <index id="54" parent="27" name="book_pkey1">
       <ObjectId>16812</ObjectId>
       <StateNumber>1091</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="63" parent="28" name="book_pkey1">
+    <key id="55" parent="27" name="book_pkey1">
       <ObjectId>16813</ObjectId>
       <StateNumber>1091</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>book_pkey1</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="64" parent="29" name="id">
+    <column id="56" parent="28" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -411,39 +352,39 @@ sequence|table|23221|23223|1
       <DefaultExpression>nextval(&apos;book1_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="65" parent="29" name="title">
+    <column id="57" parent="28" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>3954</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="66" parent="29" name="authorid">
+    <column id="58" parent="28" name="authorid">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>3954</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="67" parent="29" name="lendid">
+    <column id="59" parent="28" name="lendid">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>3954</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="68" parent="29" name="book1_pkey">
+    <index id="60" parent="28" name="book1_pkey">
       <ObjectId>23211</ObjectId>
       <StateNumber>3954</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="69" parent="29" name="book1_pkey">
+    <key id="61" parent="28" name="book1_pkey">
       <ObjectId>23212</ObjectId>
       <StateNumber>3954</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>book1_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="70" parent="29" name="fkg829dcxisolwsc6yljiljdq9">
+    <foreign-key id="62" parent="28" name="fkg829dcxisolwsc6yljiljdq9">
       <ObjectId>23232</ObjectId>
       <StateNumber>3957</StateNumber>
       <ColNames>authorid</ColNames>
@@ -453,7 +394,7 @@ sequence|table|23221|23223|1
       <RefKeyName>author_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="71" parent="29" name="fkp0bvhpyh0q22g2u9trcmst5wi">
+    <foreign-key id="63" parent="28" name="fkp0bvhpyh0q22g2u9trcmst5wi">
       <ObjectId>23237</ObjectId>
       <StateNumber>3958</StateNumber>
       <ColNames>lendid</ColNames>
@@ -463,78 +404,96 @@ sequence|table|23221|23223|1
       <RefKeyName>lend_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="72" parent="30" name="employeeid">
+    <column id="64" parent="29" name="employeeid">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4150</StateNumber>
+      <StateNumber>4184</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="73" parent="30" name="isadmin">
+    <column id="65" parent="29" name="admin">
       <Position>2</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4150</StateNumber>
+      <StateNumber>4184</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="74" parent="30" name="password">
+    <column id="66" parent="29" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>4150</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>4184</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="75" parent="30" name="username">
+    <column id="67" parent="29" name="username">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>4150</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>4184</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="76" parent="30" name="employee_pkey">
-      <ObjectId>23471</ObjectId>
-      <StateNumber>4150</StateNumber>
+    <column id="68" parent="29" name="regionid">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4184</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="69" parent="29" name="employee_pkey">
+      <ObjectId>23537</ObjectId>
+      <StateNumber>4184</StateNumber>
       <ColNames>employeeid</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="77" parent="30" name="employee_pkey">
-      <ObjectId>23472</ObjectId>
-      <StateNumber>4150</StateNumber>
+    <key id="70" parent="29" name="employee_pkey">
+      <ObjectId>23538</ObjectId>
+      <StateNumber>4184</StateNumber>
       <ColNames>employeeid</ColNames>
       <UnderlyingIndexName>employee_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="78" parent="31" name="id">
+    <foreign-key id="71" parent="29" name="fkccgnpnvaigyvmu3d7885t3gjb">
+      <ObjectId>23569</ObjectId>
+      <StateNumber>4191</StateNumber>
+      <ColNames>regionid</ColNames>
+      <RefTableId>23554</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>region</RefTableName>
+      <RefKeyName>region_pkey</RefKeyName>
+      <RefColNames>regionid</RefColNames>
+    </foreign-key>
+    <column id="72" parent="30" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>4056</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="79" parent="31" name="link">
+    <column id="73" parent="30" name="link">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>4056</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="80" parent="31" name="tytul">
+    <column id="74" parent="30" name="tytul">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>4056</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="81" parent="31" name="filmy_pkey">
+    <index id="75" parent="30" name="filmy_pkey">
       <ObjectId>23355</ObjectId>
       <StateNumber>4056</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="82" parent="31" name="filmy_pkey">
+    <key id="76" parent="30" name="filmy_pkey">
       <ObjectId>23356</ObjectId>
       <StateNumber>4056</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>filmy_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="83" parent="32" name="id">
+    <column id="77" parent="31" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -542,45 +501,45 @@ sequence|table|23221|23223|1
       <DefaultExpression>nextval(&apos;lend_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="84" parent="32" name="enddate">
+    <column id="78" parent="31" name="enddate">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>3955</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="85" parent="32" name="startdate">
+    <column id="79" parent="31" name="startdate">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>3955</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="86" parent="32" name="bookid">
+    <column id="80" parent="31" name="bookid">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>3955</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="87" parent="32" name="readerid">
+    <column id="81" parent="31" name="readerid">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>3955</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="88" parent="32" name="lend_pkey">
+    <index id="82" parent="31" name="lend_pkey">
       <ObjectId>23219</ObjectId>
       <StateNumber>3955</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="89" parent="32" name="lend_pkey">
+    <key id="83" parent="31" name="lend_pkey">
       <ObjectId>23220</ObjectId>
       <StateNumber>3955</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>lend_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="90" parent="32" name="fkl02yfh04too6hjfokk9o2ukff">
+    <foreign-key id="84" parent="31" name="fkl02yfh04too6hjfokk9o2ukff">
       <ObjectId>23242</ObjectId>
       <StateNumber>3959</StateNumber>
       <ColNames>bookid</ColNames>
@@ -590,7 +549,7 @@ sequence|table|23221|23223|1
       <RefKeyName>book1_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="91" parent="32" name="fkc8abeoq5fny34nluws711ux2n">
+    <foreign-key id="85" parent="31" name="fkc8abeoq5fny34nluws711ux2n">
       <ObjectId>23247</ObjectId>
       <StateNumber>3960</StateNumber>
       <ColNames>readerid</ColNames>
@@ -600,45 +559,45 @@ sequence|table|23221|23223|1
       <RefKeyName>reader_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="92" parent="33" name="id">
+    <column id="86" parent="32" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>4069</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="93" parent="33" name="title">
+    <column id="87" parent="32" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>4069</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="94" parent="33" name="url">
+    <column id="88" parent="32" name="url">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>4069</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="95" parent="33" name="userid">
+    <column id="89" parent="32" name="userid">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>4069</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="96" parent="33" name="movies_pkey">
+    <index id="90" parent="32" name="movies_pkey">
       <ObjectId>23386</ObjectId>
       <StateNumber>4069</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="97" parent="33" name="movies_pkey">
+    <key id="91" parent="32" name="movies_pkey">
       <ObjectId>23387</ObjectId>
       <StateNumber>4069</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>movies_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="98" parent="33" name="fkkwp94gquqamtmh5an2e2kuiic">
+    <foreign-key id="92" parent="32" name="fkkwp94gquqamtmh5an2e2kuiic">
       <ObjectId>23396</ObjectId>
       <StateNumber>4071</StateNumber>
       <ColNames>userid</ColNames>
@@ -648,89 +607,138 @@ sequence|table|23221|23223|1
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="99" parent="34" name="parkingmeterid">
+    <column id="93" parent="33" name="parkingmeterid">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4151</StateNumber>
+      <StateNumber>4185</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="100" parent="34" name="regionid">
+    <column id="94" parent="33" name="streetid">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>4151</StateNumber>
+      <StateNumber>4185</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="101" parent="34" name="parkingmeter_pkey">
-      <ObjectId>23476</ObjectId>
-      <StateNumber>4151</StateNumber>
+    <index id="95" parent="33" name="parkingmeter_pkey">
+      <ObjectId>23542</ObjectId>
+      <StateNumber>4185</StateNumber>
       <ColNames>parkingmeterid</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="102" parent="34" name="parkingmeter_pkey">
-      <ObjectId>23477</ObjectId>
-      <StateNumber>4151</StateNumber>
+    <key id="96" parent="33" name="parkingmeter_pkey">
+      <ObjectId>23543</ObjectId>
+      <StateNumber>4185</StateNumber>
       <ColNames>parkingmeterid</ColNames>
       <UnderlyingIndexName>parkingmeter_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="103" parent="34" name="fktjstd14n4ms3ocj25iku44bot">
-      <ObjectId>23508</ObjectId>
-      <StateNumber>4158</StateNumber>
-      <ColNames>parkingmeterid</ColNames>
-      <RefTableId>23483</RefTableId>
+    <foreign-key id="97" parent="33" name="fkkqvccb1egtjh3kct0x0qt1l5">
+      <ObjectId>23574</ObjectId>
+      <StateNumber>4192</StateNumber>
+      <ColNames>streetid</ColNames>
+      <RefTableId>23559</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>region</RefTableName>
-      <RefKeyName>region_pkey</RefKeyName>
-      <RefColNames>regionid</RefColNames>
+      <RefTableName>street</RefTableName>
+      <RefKeyName>street_pkey</RefKeyName>
+      <RefColNames>streetid</RefColNames>
     </foreign-key>
-    <foreign-key id="104" parent="34" name="fkb5jelwdhdjr79n8ixbg4762f">
-      <ObjectId>23503</ObjectId>
-      <StateNumber>4157</StateNumber>
-      <ColNames>regionid</ColNames>
-      <RefTableId>23483</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>region</RefTableName>
-      <RefKeyName>region_pkey</RefKeyName>
-      <RefColNames>regionid</RefColNames>
-    </foreign-key>
-    <column id="105" parent="35" name="parkingspotid">
+    <column id="98" parent="34" name="parkingspotid">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4152</StateNumber>
+      <StateNumber>4186</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="106" parent="35" name="regionid">
+    <column id="99" parent="34" name="available">
       <Position>2</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4186</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="100" parent="34" name="streetid">
+      <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>4152</StateNumber>
+      <StateNumber>4186</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="107" parent="35" name="parkingspot_pkey">
-      <ObjectId>23481</ObjectId>
-      <StateNumber>4152</StateNumber>
+    <index id="101" parent="34" name="parkingspot_pkey">
+      <ObjectId>23547</ObjectId>
+      <StateNumber>4186</StateNumber>
       <ColNames>parkingspotid</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="108" parent="35" name="parkingspot_pkey">
-      <ObjectId>23482</ObjectId>
-      <StateNumber>4152</StateNumber>
+    <key id="102" parent="34" name="parkingspot_pkey">
+      <ObjectId>23548</ObjectId>
+      <StateNumber>4186</StateNumber>
       <ColNames>parkingspotid</ColNames>
       <UnderlyingIndexName>parkingspot_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="109" parent="35" name="fkpo40ey9e7w8fisw6eohyl47ql">
-      <ObjectId>23513</ObjectId>
-      <StateNumber>4159</StateNumber>
-      <ColNames>regionid</ColNames>
-      <RefTableId>23483</RefTableId>
+    <foreign-key id="103" parent="34" name="fkq41isgmmbhqnftrs06ox12nux">
+      <ObjectId>23579</ObjectId>
+      <StateNumber>4193</StateNumber>
+      <ColNames>streetid</ColNames>
+      <RefTableId>23559</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>region</RefTableName>
-      <RefKeyName>region_pkey</RefKeyName>
-      <RefColNames>regionid</RefColNames>
+      <RefTableName>street</RefTableName>
+      <RefKeyName>street_pkey</RefKeyName>
+      <RefColNames>streetid</RefColNames>
     </foreign-key>
-    <column id="110" parent="36" name="id">
+    <column id="104" parent="35" name="purchasesid">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4187</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="105" parent="35" name="parkingspotid">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4187</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="106" parent="35" name="ticketsid">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4187</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="107" parent="35" name="purchases_pkey">
+      <ObjectId>23552</ObjectId>
+      <StateNumber>4187</StateNumber>
+      <ColNames>purchasesid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="108" parent="35" name="purchases_pkey">
+      <ObjectId>23553</ObjectId>
+      <StateNumber>4187</StateNumber>
+      <ColNames>purchasesid</ColNames>
+      <UnderlyingIndexName>purchases_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="109" parent="35" name="fk6mi0748rtalhf9bawq5g5r2mc">
+      <ObjectId>23584</ObjectId>
+      <StateNumber>4194</StateNumber>
+      <ColNames>parkingspotid</ColNames>
+      <RefTableId>23544</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>parkingspot</RefTableName>
+      <RefKeyName>parkingspot_pkey</RefKeyName>
+      <RefColNames>parkingspotid</RefColNames>
+    </foreign-key>
+    <foreign-key id="110" parent="35" name="fkpk4k0qagc0wxr1ir8gqecc7gb">
+      <ObjectId>23589</ObjectId>
+      <StateNumber>4195</StateNumber>
+      <ColNames>ticketsid</ColNames>
+      <RefTableId>23564</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>tickets</RefTableName>
+      <RefKeyName>tickets_pkey</RefKeyName>
+      <RefColNames>ticketsid</RefColNames>
+    </foreign-key>
+    <column id="111" parent="36" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -738,201 +746,240 @@ sequence|table|23221|23223|1
       <DefaultExpression>nextval(&apos;reader_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="111" parent="36" name="name">
+    <column id="112" parent="36" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>3956</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="112" parent="36" name="surname">
+    <column id="113" parent="36" name="surname">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>3956</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="113" parent="36" name="reader_pkey">
+    <index id="114" parent="36" name="reader_pkey">
       <ObjectId>23230</ObjectId>
       <StateNumber>3956</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="114" parent="36" name="reader_pkey">
+    <key id="115" parent="36" name="reader_pkey">
       <ObjectId>23231</ObjectId>
       <StateNumber>3956</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>reader_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="115" parent="37" name="regionid">
+    <column id="116" parent="37" name="regionid">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4153</StateNumber>
+      <StateNumber>4188</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="116" parent="37" name="name">
+    <column id="117" parent="37" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>4153</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>4188</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="117" parent="37" name="employeeid">
-      <Position>3</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>4153</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
     <index id="118" parent="37" name="region_pkey">
-      <ObjectId>23486</ObjectId>
-      <StateNumber>4153</StateNumber>
+      <ObjectId>23557</ObjectId>
+      <StateNumber>4188</StateNumber>
       <ColNames>regionid</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="119" parent="37" name="region_pkey">
-      <ObjectId>23487</ObjectId>
-      <StateNumber>4153</StateNumber>
+      <ObjectId>23558</ObjectId>
+      <StateNumber>4188</StateNumber>
       <ColNames>regionid</ColNames>
       <UnderlyingIndexName>region_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="120" parent="37" name="fkle5cvv0qybf9e7s9a5y3j6w6w">
-      <ObjectId>23518</ObjectId>
-      <StateNumber>4160</StateNumber>
-      <ColNames>employeeid</ColNames>
-      <RefTableId>23465</RefTableId>
+    <column id="120" parent="38" name="streetid">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4189</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="121" parent="38" name="streetname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4189</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="122" parent="38" name="regionid">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4189</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="123" parent="38" name="street_pkey">
+      <ObjectId>23562</ObjectId>
+      <StateNumber>4189</StateNumber>
+      <ColNames>streetid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="124" parent="38" name="street_pkey">
+      <ObjectId>23563</ObjectId>
+      <StateNumber>4189</StateNumber>
+      <ColNames>streetid</ColNames>
+      <UnderlyingIndexName>street_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="125" parent="38" name="fk7ojk3ty2un3xvapvs70e22qr2">
+      <ObjectId>23594</ObjectId>
+      <StateNumber>4196</StateNumber>
+      <ColNames>regionid</ColNames>
+      <RefTableId>23554</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>employee</RefTableName>
-      <RefKeyName>employee_pkey</RefKeyName>
-      <RefColNames>employeeid</RefColNames>
+      <RefTableName>region</RefTableName>
+      <RefKeyName>region_pkey</RefKeyName>
+      <RefColNames>regionid</RefColNames>
     </foreign-key>
-    <column id="121" parent="38" name="id">
+    <column id="126" parent="39" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>881</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="122" parent="38" name="data">
+    <column id="127" parent="39" name="data">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>881</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="123" parent="38" name="imie">
+    <column id="128" parent="39" name="imie">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>881</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="124" parent="38" name="nazwisko">
+    <column id="129" parent="39" name="nazwisko">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>881</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="125" parent="38" name="student_pkey">
+    <index id="130" parent="39" name="student_pkey">
       <ObjectId>16693</ObjectId>
       <StateNumber>881</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="126" parent="38" name="student_pkey">
+    <key id="131" parent="39" name="student_pkey">
       <ObjectId>16694</ObjectId>
       <StateNumber>881</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>student_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="127" parent="39" name="ticketsid">
+    <column id="132" parent="40" name="ticketsid">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4154</StateNumber>
+      <StateNumber>4190</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="128" parent="39" name="duration">
+    <column id="133" parent="40" name="duration">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>4154</StateNumber>
+      <StateNumber>4190</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="129" parent="39" name="enddate">
+    <column id="134" parent="40" name="endtime">
       <Position>3</Position>
-      <DataType>timestamp|0s</DataType>
-      <StateNumber>4154</StateNumber>
-      <TypeId>1114</TypeId>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>4190</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="130" parent="39" name="startdate">
+    <column id="135" parent="40" name="parkingmeterid">
       <Position>4</Position>
-      <DataType>timestamp|0s</DataType>
-      <StateNumber>4154</StateNumber>
-      <TypeId>1114</TypeId>
+      <DataType>integer|0s</DataType>
+      <StateNumber>4190</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <column id="131" parent="39" name="parkingmeterid">
+    <column id="136" parent="40" name="parkingspotid">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>4154</StateNumber>
+      <StateNumber>4190</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="132" parent="39" name="tickets_pkey">
-      <ObjectId>23491</ObjectId>
-      <StateNumber>4154</StateNumber>
+    <index id="137" parent="40" name="tickets_pkey">
+      <ObjectId>23567</ObjectId>
+      <StateNumber>4190</StateNumber>
       <ColNames>ticketsid</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="133" parent="39" name="tickets_pkey">
-      <ObjectId>23492</ObjectId>
-      <StateNumber>4154</StateNumber>
+    <key id="138" parent="40" name="tickets_pkey">
+      <ObjectId>23568</ObjectId>
+      <StateNumber>4190</StateNumber>
       <ColNames>ticketsid</ColNames>
       <UnderlyingIndexName>tickets_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="134" parent="39" name="fkgxrc4efvm34h53yavhjkteck2">
-      <ObjectId>23523</ObjectId>
-      <StateNumber>4161</StateNumber>
+    <foreign-key id="139" parent="40" name="fkgxrc4efvm34h53yavhjkteck2">
+      <ObjectId>23599</ObjectId>
+      <StateNumber>4197</StateNumber>
       <ColNames>parkingmeterid</ColNames>
-      <RefTableId>23473</RefTableId>
+      <RefTableId>23539</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>parkingmeter</RefTableName>
       <RefKeyName>parkingmeter_pkey</RefKeyName>
       <RefColNames>parkingmeterid</RefColNames>
     </foreign-key>
-    <column id="135" parent="40" name="id">
+    <foreign-key id="140" parent="40" name="fkwj2eifanxvcseci08jjses0w">
+      <ObjectId>23604</ObjectId>
+      <StateNumber>4198</StateNumber>
+      <ColNames>parkingspotid</ColNames>
+      <RefTableId>23544</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>parkingspot</RefTableName>
+      <RefKeyName>parkingspot_pkey</RefKeyName>
+      <RefColNames>parkingspotid</RefColNames>
+    </foreign-key>
+    <column id="141" parent="41" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>4070</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="136" parent="40" name="age">
+    <column id="142" parent="41" name="age">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>4070</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="137" parent="40" name="avatar">
+    <column id="143" parent="41" name="avatar">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>4070</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="138" parent="40" name="name">
+    <column id="144" parent="41" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>4070</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="139" parent="40" name="users_pkey">
+    <index id="145" parent="41" name="users_pkey">
       <ObjectId>23394</ObjectId>
       <StateNumber>4070</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="140" parent="40" name="users_pkey">
+    <key id="146" parent="41" name="users_pkey">
       <ObjectId>23395</ObjectId>
       <StateNumber>4070</StateNumber>
       <ColNames>id</ColNames>

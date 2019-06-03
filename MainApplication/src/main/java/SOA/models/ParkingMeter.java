@@ -2,30 +2,38 @@ package SOA.models;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class ParkingMeter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int parkingMeterId;
+    private Integer parkingMeterId;
 
     @ManyToOne
-    @JoinColumn(name = "regionId")
-    private Region region;
+    @JoinColumn(name = "streetId")
+    private Street street;
 
-    public int getParkingMeterId() {
+    @OneToMany(mappedBy = "parkingMeter")
+    private Set<Tickets> ticketsSet;
+
+    public Integer getParkingMeterId() {
         return parkingMeterId;
     }
 
-    public void setParkingMeterId(int parkingMeterId) {
-        this.parkingMeterId = parkingMeterId;
+    public Street getStreet() {
+        return street;
     }
 
-    public Region getRegion() {
-        return region;
+    public void setStreet(Street street) {
+        this.street = street;
     }
 
-    public void setRegion(Region region) {
-        this.region = region;
+    public Set<Tickets> getTicketsSet() {
+        return ticketsSet;
+    }
+
+    public void setTicketsSet(Set<Tickets> ticketsSet) {
+        this.ticketsSet = ticketsSet;
     }
 }

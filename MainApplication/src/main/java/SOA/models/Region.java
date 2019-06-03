@@ -1,31 +1,28 @@
 package SOA.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int regionId;
+    private Integer regionId;
 
+    @NotNull
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "employeeId")
-    private Employee employee;
+    @OneToMany(mappedBy = "region")
+    private Set<Employee> employee;
 
-    @OneToMany
-    @JoinColumn(name = "parkingMeterId")
-    private List<ParkingMeter> parkingMeterList;
+    @OneToMany(mappedBy = "region")
+    private Set<Street> streetList;
 
 
     public int getRegionId() {
         return regionId;
-    }
-
-    public void setRegionId(int regionId) {
-        this.regionId = regionId;
     }
 
     public String getName() {
@@ -36,19 +33,19 @@ public class Region {
         this.name = name;
     }
 
-    public Employee getEmployee() {
+    public Set<Employee> getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(Set<Employee> employee) {
         this.employee = employee;
     }
 
-    public List<ParkingMeter> getParkingMeterList() {
-        return parkingMeterList;
+    public Set<Street> getStreetList() {
+        return streetList;
     }
 
-    public void setParkingMeterList(List<ParkingMeter> parkingMeterList) {
-        this.parkingMeterList = parkingMeterList;
+    public void setStreetList(Set<Street> streetList) {
+        this.streetList = streetList;
     }
 }

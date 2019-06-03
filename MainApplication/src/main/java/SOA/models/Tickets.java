@@ -1,45 +1,30 @@
 package SOA.models;
 
 import javax.persistence.*;
-import java.util.Date;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Tickets {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int ticketsId;
+    private Integer ticketsId;
 
-    private Date startDate;
-    private Date endDate;
+    @NotNull
+    private Long endTime;
 
-    private int duration;
+    @NotNull
+    private Integer duration;
 
     @ManyToOne
     @JoinColumn(name = "parkingMeterId")
     private ParkingMeter parkingMeter;
 
+    @OneToOne
+    @JoinColumn(name = "parkingSpotId")
+    private ParkingSpot parkingSpot;
+
     public int getTicketsId() {
         return ticketsId;
-    }
-
-    public void setTicketsId(int ticketsId) {
-        this.ticketsId = ticketsId;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 
     public int getDuration() {
@@ -56,5 +41,25 @@ public class Tickets {
 
     public void setParkingMeter(ParkingMeter parkingMeter) {
         this.parkingMeter = parkingMeter;
+    }
+
+    public Long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Long endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public ParkingSpot getParkingSpot() {
+        return parkingSpot;
+    }
+
+    public void setParkingSpot(ParkingSpot parkingSpot) {
+        this.parkingSpot = parkingSpot;
     }
 }
