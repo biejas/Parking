@@ -25,4 +25,3 @@ hs_err_pid*
 # inteliJJ files
 .DS_Store
 .idea/
-*.iml
