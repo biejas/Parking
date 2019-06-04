@@ -62,4 +62,7 @@ public class Tickets {
     public void setParkingSpot(ParkingSpot parkingSpot) {
         this.parkingSpot = parkingSpot;
     }
+
+    public Tickets() {
+    }
 }

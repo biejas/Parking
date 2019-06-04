@@ -57,4 +57,7 @@ public class Region {
     public void setParkingMeterSet(Set<ParkingMeter> parkingMeterSet) {
         this.parkingMeterSet = parkingMeterSet;
     }
+
+    public Region() {
+    }
 }

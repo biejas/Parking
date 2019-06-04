@@ -35,4 +35,7 @@ public class Purchases {
     public void setTickets(Tickets tickets) {
         this.tickets = tickets;
     }
+
+    public Purchases() {
+    }
 }

@@ -58,4 +58,7 @@ public class ParkingSpot {
     public void setRegion(Region region) {
         this.region = region;
     }
+
+    public ParkingSpot() {
+    }
 }

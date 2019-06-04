@@ -2,12 +2,12 @@ package SOA.DAO;
 
 import SOA.models.Employee;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
 
 public class EmployeeDAO {
+    private static EntityManagerFactory factory;
     private static EntityManager em;
 
     public static Optional<List<Employee>> getAllEmployees(){
@@ -28,4 +28,23 @@ public class EmployeeDAO {
             return Optional.empty();
         }
     }
+
+    public static void addEmployee(){
+        factory=Persistence.createEntityManagerFactory("parking");
+        em=factory.createEntityManager();
+        EntityTransaction entr=em.getTransaction();
+        entr.begin();
+        try{
+            Employee employee = new Employee();
+            employee.setAdmin(false);
+            employee.setUsername("Aga");
+            employee.setPassword("asas");
+            em.persist(employee);
+            entr.commit();
+        }
+        catch (Exception e){
+            System.err.println("Blad przy dodawaniu rekordu" + e);
+        }
+    }
+
 }

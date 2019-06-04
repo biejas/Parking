@@ -57,4 +57,7 @@ public class Employee {
     public void setRegion(Region region) {
         this.region = region;
     }
+
+    public Employee() {
+    }
 }

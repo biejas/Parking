@@ -48,4 +48,7 @@ public class ParkingMeter {
     public void setRegion(Region region) {
         this.region = region;
     }
+
+    public ParkingMeter() {
+    }
 }

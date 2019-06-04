@@ -7,6 +7,12 @@
     <persistence-unit name="parking">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:/PostgresDS</jta-data-source>
+        <class>SOA.models.Employee</class>
+        <class>SOA.models.Region</class>
+        <class>SOA.models.Tickets</class>
+        <class>SOA.models.Purchases</class>
+        <class>SOA.models.ParkingSpot</class>
+        <class>SOA.models.ParkingMeter</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
