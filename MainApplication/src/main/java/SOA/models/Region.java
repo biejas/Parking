@@ -18,8 +18,10 @@ public class Region {
     private Set<Employee> employee;
 
     @OneToMany(mappedBy = "region")
-    private Set<Street> streetList;
+    private Set<ParkingSpot> parkingSpotSet;
 
+    @OneToMany(mappedBy = "region")
+    private Set<ParkingMeter> parkingMeterSet;
 
     public int getRegionId() {
         return regionId;
@@ -41,11 +43,19 @@ public class Region {
         this.employee = employee;
     }
 
-    public Set<Street> getStreetList() {
-        return streetList;
+    public Set<ParkingSpot> getParkingSpotSet() {
+        return parkingSpotSet;
     }
 
-    public void setStreetList(Set<Street> streetList) {
-        this.streetList = streetList;
+    public void setParkingSpotSet(Set<ParkingSpot> parkingSpotSet) {
+        this.parkingSpotSet = parkingSpotSet;
+    }
+
+    public Set<ParkingMeter> getParkingMeterSet() {
+        return parkingMeterSet;
+    }
+
+    public void setParkingMeterSet(Set<ParkingMeter> parkingMeterSet) {
+        this.parkingMeterSet = parkingMeterSet;
     }
 }

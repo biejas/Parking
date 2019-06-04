@@ -13,9 +13,12 @@ public class ParkingSpot {
     @NotNull
     private boolean available;
 
+    @NotNull
+    private String street;
+
     @ManyToOne
-    @JoinColumn(name = "streetId")
-    private Street street;
+    @JoinColumn(name = "regionId")
+    private Region region;
 
     @OneToOne
     @JoinColumn(name = "parkingSpotId")
@@ -33,19 +36,27 @@ public class ParkingSpot {
         this.available = available;
     }
 
-    public Street getStreet() {
-        return street;
-    }
-
-    public void setStreet(Street street) {
-        this.street = street;
-    }
-
     public Tickets getTicket() {
         return ticket;
     }
 
     public void setTicket(Tickets ticket) {
         this.ticket = ticket;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
     }
 }

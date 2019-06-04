@@ -2,6 +2,7 @@ package SOA.models;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -10,9 +11,12 @@ public class ParkingMeter {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer parkingMeterId;
 
+    @NotNull
+    private String street;
+
     @ManyToOne
-    @JoinColumn(name = "streetId")
-    private Street street;
+    @JoinColumn(name = "regionId")
+    private Region region;
 
     @OneToMany(mappedBy = "parkingMeter")
     private Set<Tickets> ticketsSet;
@@ -21,19 +25,27 @@ public class ParkingMeter {
         return parkingMeterId;
     }
 
-    public Street getStreet() {
-        return street;
-    }
-
-    public void setStreet(Street street) {
-        this.street = street;
-    }
-
     public Set<Tickets> getTicketsSet() {
         return ticketsSet;
     }
 
     public void setTicketsSet(Set<Tickets> ticketsSet) {
         this.ticketsSet = ticketsSet;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
     }
 }
