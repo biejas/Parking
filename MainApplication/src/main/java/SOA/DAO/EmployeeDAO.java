@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class EmployeeDAO {
-    private static EntityManagerFactory factory;
+    private static EntityManagerFactory factory=Persistence.createEntityManagerFactory("parking");
+
     private static EntityManager em;
 
     public static Optional<List<Employee>> getAllEmployees(){
@@ -29,22 +30,18 @@ public class EmployeeDAO {
         }
     }
 
-    public static void addEmployee(){
-        factory=Persistence.createEntityManagerFactory("parking");
+    public static void addEmployee(Employee employee){
         em=factory.createEntityManager();
         EntityTransaction entr=em.getTransaction();
         entr.begin();
         try{
-            Employee employee = new Employee();
-            employee.setAdmin(false);
-            employee.setUsername("Aga");
-            employee.setPassword("asas");
             em.persist(employee);
             entr.commit();
         }
         catch (Exception e){
             System.err.println("Blad przy dodawaniu rekordu" + e);
         }
+        em.close();
     }
 
 }
