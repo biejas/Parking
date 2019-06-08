@@ -2,16 +2,21 @@ package SOA.DAO;
 
 import SOA.models.Employee;
 
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
 
+@Singleton
+@Startup
 public class EmployeeDAO {
-    private static EntityManagerFactory factory=Persistence.createEntityManagerFactory("parking");
+    private EntityManagerFactory factory=Persistence.createEntityManagerFactory("parking");
 
-    private static EntityManager em;
+    @PersistenceContext
+    private EntityManager em;
 
-    public static Optional<List<Employee>> getAllEmployees(){
+    public Optional<List<Employee>> getAllEmployees(){
         try {
             TypedQuery<Employee> query = em.createQuery("SELECT e from Employee e", Employee.class);
             return Optional.of(query.getResultList());
@@ -20,7 +25,7 @@ public class EmployeeDAO {
         }
     }
 
-    public static Optional<Employee> getEmployeeByUsername(String username){
+    public Optional<Employee> getEmployeeByUsername(String username){
         try {
             TypedQuery<Employee> query = em.createQuery("SELECT e from Employee e WHERE e.username=:username", Employee.class)
                     .setParameter("username", username);
@@ -30,7 +35,22 @@ public class EmployeeDAO {
         }
     }
 
-    public static void addEmployee(Employee employee){
+    public void updateEmployee(Employee employee){
+        em=factory.createEntityManager();
+        EntityTransaction entr=em.getTransaction();
+        entr.begin();
+        try{
+            em.merge(employee);
+            entr.commit();
+        }
+        catch (Exception e){
+            System.err.println("Blad przy dodawaniu rekordu" + e);
+        }
+        em.close();
+    }
+
+    public void addEmployee(Employee employee){
+        System.out.println(employee.getUsername());
         em=factory.createEntityManager();
         EntityTransaction entr=em.getTransaction();
         entr.begin();

@@ -2,6 +2,8 @@ package SOA.DAO;
 
 import SOA.models.Tickets;
 
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -9,12 +11,14 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
+@Singleton
+@Startup
 public class TicketsDAO {
-    private static EntityManagerFactory factory= Persistence.createEntityManagerFactory("parking");
+    private EntityManagerFactory factory= Persistence.createEntityManagerFactory("parking");
 
-    private static EntityManager em;
+    private EntityManager em;
 
-    public static Optional<List<Tickets>> getAllTickets(){
+    public Optional<List<Tickets>> getAllTickets(){
         try {
             TypedQuery<Tickets> query = em.createQuery("SELECT e from Tickets e", Tickets.class);
             return Optional.of(query.getResultList());
@@ -23,7 +27,7 @@ public class TicketsDAO {
         }
     }
 
-    public static Optional<Tickets> getTicketById(Integer id){
+    public Optional<Tickets> getTicketById(Integer id){
         try {
             TypedQuery<Tickets> query = em.createQuery("SELECT e from Tickets e WHERE e.ticketsId=:id", Tickets.class)
                     .setParameter("id", id);

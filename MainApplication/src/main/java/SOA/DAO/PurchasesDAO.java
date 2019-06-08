@@ -2,6 +2,8 @@ package SOA.DAO;
 
 import SOA.models.Purchases;
 
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -9,12 +11,14 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
+@Singleton
+@Startup
 public class PurchasesDAO {
-    private static EntityManagerFactory factory= Persistence.createEntityManagerFactory("parking");
+    private EntityManagerFactory factory= Persistence.createEntityManagerFactory("parking");
 
-    private static EntityManager em;
+    private EntityManager em;
 
-    public static Optional<List<Purchases>> getAllPurchases(){
+    public Optional<List<Purchases>> getAllPurchases(){
         try {
             TypedQuery<Purchases> query = em.createQuery("SELECT e from Purchases e", Purchases.class);
             return Optional.of(query.getResultList());
