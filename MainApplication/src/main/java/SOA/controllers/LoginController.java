@@ -8,8 +8,10 @@ import SOA.utils.SecurityUtils;
 import SOA.InvalidCredentialsException;
 
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 @SessionScoped
@@ -19,7 +21,6 @@ public class LoginController {
 
     private String username;
     private String password;
-    private String message;
     private boolean invalidateSessionLink = false;
 
     public void login() {
@@ -27,10 +28,10 @@ public class LoginController {
             loginService.login(username, password);
             SecurityUtils.redirect("index.xhtml");
         } catch (InvalidCredentialsException e){
-            message = e.getMessage();
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", e.getMessage()));
         } catch (SessionExistsException e){
-            message = e.getMessage();
             invalidateSessionLink = true;
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", e.getMessage()));
         }
     }
 
@@ -42,7 +43,6 @@ public class LoginController {
     public void invalidateSession(String username){
         loginService.invalidateSession(username);
         invalidateSessionLink = false;
-        message = null;
         SecurityUtils.redirect("login.xhtml");
     }
 
@@ -75,14 +75,6 @@ public class LoginController {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public boolean isInvalidateSessionLink() {
