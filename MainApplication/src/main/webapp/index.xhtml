@@ -4,10 +4,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
 <h:body>
-    <h:form>
-        <h:commandButton value="Wyslij" action="#{loginController.addEmployee()}"/>
-    </h:form>
+    <ui:include src="authentication.xhtml"/>
+
+
+
+    <ui:fragment rendered="#{loginController.isAuthenticated()}">
+        <h:form>
+            <p:poll interval="60" update="panel"/>
+        </h:form>
+        <ui:include src="menubar.xhtml"/>
+        <h:panelGrid id="panel">
+            <p:messages id="messages" showDetail="true" closable="true" >
+                <p:autoUpdate />
+            </p:messages>
+            <p:dataTable value="#{dashboardController.getParkingSpots()}" var="p">
+                <p:column headerText="Id" >
+                    <h:outputText value="#{p.getParkingSpotId()}" />
+                </p:column>
+                <p:column headerText="Region" >
+                    <h:outputText value="#{p.getRegion().getName()}" />
+                </p:column>
+                <p:column headerText="Ulica" >
+                    <h:outputText value="#{p.getStreet()}" />
+                </p:column>
+                <p:column headerText="Dostępność" >
+                    <h:outputText value="#{p.isAvailable()}" />
+                </p:column>
+                <p:column headerText="Czas wygaśnięcia biletu" >
+                    <h:outputText value="#{dashboardController.getFormattedTime(p.ticket.endTime)}" />
+                </p:column>
+            </p:dataTable>
+        </h:panelGrid>
+    </ui:fragment>
 </h:body>
 </html>

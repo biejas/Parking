@@ -7,7 +7,6 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 <h:head>
-
 </h:head>
 <h:body>
     <h:panelGrid>
@@ -21,6 +20,7 @@
         <h:form name="loginForm" method="post" action="j_security_check">
             <h:outputLabel for="j_username" value="Login:"/>
             <h:inputText id="j_username" value="#{loginController.username}" required="true"/>
+            <br/>
             <h:outputLabel for="j_password" value="Hasło:"/>
             <h:inputSecret id="j_password" value="#{loginController.password}" required="true"/>
             <h:commandButton value="Zaloguj" type="submit" action="#{loginController.login()}"/>
