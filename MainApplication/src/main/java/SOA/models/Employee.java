@@ -22,8 +22,6 @@ public class Employee {
     @JoinColumn(name = "regionId")
     private Region region;
 
-
-
     public Integer getEmployeeId() {
         return employeeId;
     }
