@@ -4,27 +4,19 @@ import SOA.models.ParkingSpot;
 
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
 
 @Singleton
 @Startup
 public class ParkingSpotDAO {
-    private EntityManagerFactory factory= Persistence.createEntityManagerFactory("parking");
-
+    @PersistenceContext(unitName = "parking")
     private EntityManager em;
 
-    public Optional<List<ParkingSpot>> getAllParkingSpots(){
-        try {
+    public List<ParkingSpot> getAllParkingSpots(){
             TypedQuery<ParkingSpot> query = em.createQuery("SELECT e from ParkingSpot e", ParkingSpot.class);
-            return Optional.of(query.getResultList());
-        } catch (Exception e) {
-            return Optional.empty();
-        }
+            return query.getResultList();
     }
 
     public Optional<ParkingSpot> getParkingSpotById(Integer id){
@@ -65,5 +57,18 @@ public class ParkingSpotDAO {
         } catch(Exception e){
             return Optional.empty();
         }
+    }
+
+    public void updateParkingSpot(ParkingSpot parkingSpot){
+        EntityTransaction entr=em.getTransaction();
+        entr.begin();
+        try{
+            em.merge(parkingSpot);
+            entr.commit();
+        }
+        catch (Exception e){
+            System.err.println("Blad przy dodawaniu rekordu" + e);
+        }
+        em.close();
     }
 }

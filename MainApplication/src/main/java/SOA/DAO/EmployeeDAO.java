@@ -11,9 +11,8 @@ import java.util.Optional;
 @Singleton
 @Startup
 public class EmployeeDAO {
-    private EntityManagerFactory factory=Persistence.createEntityManagerFactory("parking");
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "parking")
     private EntityManager em;
 
     public Optional<List<Employee>> getAllEmployees(){
@@ -36,7 +35,6 @@ public class EmployeeDAO {
     }
 
     public void updateEmployee(Employee employee){
-        em=factory.createEntityManager();
         EntityTransaction entr=em.getTransaction();
         entr.begin();
         try{
@@ -50,8 +48,6 @@ public class EmployeeDAO {
     }
 
     public void addEmployee(Employee employee){
-        System.out.println(employee.getUsername());
-        em=factory.createEntityManager();
         EntityTransaction entr=em.getTransaction();
         entr.begin();
         try{
