@@ -4,9 +4,10 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
 
-    <persistence-unit name="parking">
+    <persistence-unit name="parking" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:/PostgresDS</jta-data-source>
+
         <class>SOA.models.Employee</class>
         <class>SOA.models.Region</class>
         <class>SOA.models.Tickets</class>
@@ -14,7 +15,7 @@
         <class>SOA.models.ParkingSpot</class>
         <class>SOA.models.ParkingMeter</class>
         <properties>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>

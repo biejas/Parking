@@ -8,7 +8,7 @@
         <welcome-file>/index.xhtml</welcome-file>
     </welcome-file-list>
 
-        <context-param>
+    <context-param>
             <param-name>resteasy.scan</param-name>
             <param-value>true</param-value>
         </context-param>
