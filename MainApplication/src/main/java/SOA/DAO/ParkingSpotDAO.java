@@ -39,24 +39,17 @@ public class ParkingSpotDAO {
         }
     }
 
-    public Optional<List<ParkingSpot>> getParkingSpotByRegionId(Integer id){
-        try {
-            TypedQuery<ParkingSpot> query = em.createQuery("SELECT e.parkingSpotSet from Region e WHERE e.regionId=:id", ParkingSpot.class)
+    public List<ParkingSpot> getParkingSpotByRegionId(Integer id){
+        TypedQuery<ParkingSpot> query = em.createQuery("SELECT e.parkingSpotSet from Region e WHERE e.regionId=:id", ParkingSpot.class)
                     .setParameter("id", id);
-            return Optional.of(query.getResultList());
-        } catch(Exception e){
-            return Optional.empty();
-        }
+        return query.getResultList();
     }
 
-    public Optional<List<ParkingSpot>> getParkingSpotByStreet(String street){
-        try {
-            TypedQuery<ParkingSpot> query = em.createQuery("SELECT e from ParkingSpot e WHERE e.street=:street", ParkingSpot.class)
+    public List<ParkingSpot> getParkingSpotByStreet(String street){
+        TypedQuery<ParkingSpot> query = em.createQuery("SELECT e from ParkingSpot e WHERE e.street=:street", ParkingSpot.class)
                     .setParameter("street", street);
-            return Optional.of(query.getResultList());
-        } catch(Exception e){
-            return Optional.empty();
-        }
+        return query.getResultList();
+
     }
 
     public void updateParkingSpot(ParkingSpot parkingSpot){

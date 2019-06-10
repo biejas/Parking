@@ -15,13 +15,9 @@ public class EmployeeDAO {
     @PersistenceContext(unitName = "parking")
     private EntityManager em;
 
-    public Optional<List<Employee>> getAllEmployees(){
-        try {
-            TypedQuery<Employee> query = em.createQuery("SELECT e from Employee e", Employee.class);
-            return Optional.of(query.getResultList());
-        } catch (Exception e) {
-            return Optional.empty();
-        }
+    public List<Employee> getAllEmployees(){
+        TypedQuery<Employee> query = em.createQuery("SELECT e from Employee e", Employee.class);
+        return query.getResultList();
     }
 
     public Optional<Employee> getEmployeeByUsername(String username){
@@ -42,7 +38,7 @@ public class EmployeeDAO {
             entr.commit();
         }
         catch (Exception e){
-            System.err.println("Blad przy dodawaniu rekordu" + e);
+            System.err.println("Blad przy edycji rekordu" + e);
         }
         em.close();
     }

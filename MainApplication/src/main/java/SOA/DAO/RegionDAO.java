@@ -4,27 +4,20 @@ import SOA.models.Region;
 
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
 
 @Singleton
 @Startup
 public class RegionDAO {
-    private EntityManagerFactory factory= Persistence.createEntityManagerFactory("parking");
-
+    @PersistenceContext(unitName = "parking")
     private EntityManager em;
 
-    public Optional<List<Region>> getRegions(){
-        try {
-            TypedQuery<Region> query = em.createQuery("SELECT e from Region e", Region.class);
-            return Optional.of(query.getResultList());
-        } catch (Exception e) {
-            return Optional.empty();
-        }
+    public List<Region> getRegions(){
+        TypedQuery<Region> query = em.createQuery("SELECT e from Region e", Region.class);
+        return query.getResultList();
+
     }
 
     public Optional<Region> getRegionById(Integer id){
