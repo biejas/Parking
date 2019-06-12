@@ -1,5 +1,6 @@
 package SOA.controllers.rest;
 
+import SOA.DTO.ParkingSpotDTO;
 import SOA.DTO.TicketsDTO;
 import SOA.services.ParkingSpotService;
 import SOA.services.TicketService;
@@ -21,21 +22,36 @@ public class TicketsController {
     @Path("/{id}")
     @Produces("application/json")
     public Response getTicket(@PathParam("id") Integer id){
-        return Response.ok(ticketService.getTicketDTO(id)).build();
+        TicketsDTO ticketsDTO= ticketService.getTicketDTO(id);
+        if (ticketsDTO==null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(ticketsDTO).build();
+        }
     }
 
     @GET
     @Path("/")
     @Produces("application/json")
-    public List<TicketsDTO> getTickets(){
-        return ticketService.getTicketDTO();
+    public Response getTickets(){
+        List<TicketsDTO> ticketsDTOS= ticketService.getTicketDTO();
+        if (ticketsDTOS.isEmpty()) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(ticketsDTOS).build();
+        }
     }
 
     @GET
     @Path("/{id}/parkingspot")
     @Produces("application/json")
-    public Response getPArkingSpotForTicket(@PathParam("id") Integer id){
-        return Response.ok(parkingSpotService.getParkingSpotDTOByTicket(id)).build();
+    public Response getParkingSpotForTicket(@PathParam("id") Integer id){
+        ParkingSpotDTO parkingSpotDTO =parkingSpotService.getParkingSpotDTOByTicket(id);
+        if (parkingSpotDTO==null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(parkingSpotDTO).build();
+        }
     }
 
     @POST
