@@ -4,27 +4,20 @@ import SOA.models.Tickets;
 
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
 
 @Singleton
 @Startup
 public class TicketsDAO {
-    private EntityManagerFactory factory= Persistence.createEntityManagerFactory("parking");
-
+    @PersistenceContext(unitName = "parking")
     private EntityManager em;
 
-    public Optional<List<Tickets>> getAllTickets(){
-        try {
-            TypedQuery<Tickets> query = em.createQuery("SELECT e from Tickets e", Tickets.class);
-            return Optional.of(query.getResultList());
-        } catch (Exception e) {
-            return Optional.empty();
-        }
+    public List<Tickets> getAllTickets(){
+        TypedQuery<Tickets> query = em.createQuery("SELECT e from Tickets e", Tickets.class);
+        return query.getResultList();
+
     }
 
     public Optional<Tickets> getTicketById(Integer id){
@@ -34,6 +27,24 @@ public class TicketsDAO {
             return Optional.of(query.getSingleResult());
         } catch(Exception e){
             return Optional.empty();
+        }
+    }
+
+    public void addTicket(Tickets ticket){
+        try{
+            em.persist(ticket);
+        }
+        catch (Exception e){
+            System.err.println("Blad przy dodawaniu rekordu" + e);
+        }
+    }
+
+    public void updateTicket(Tickets ticket){
+        try{
+            em.merge(ticket);
+        }
+        catch (Exception e){
+            System.err.println("Blad przy edycji rekordu" + e);
         }
     }
 }

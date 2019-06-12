@@ -21,6 +21,10 @@ public class ParkingMeter {
     @OneToMany(mappedBy = "parkingMeter")
     private Set<Tickets> ticketsSet;
 
+    public void setParkingMeterId(Integer parkingMeterId) {
+        this.parkingMeterId = parkingMeterId;
+    }
+
     public Integer getParkingMeterId() {
         return parkingMeterId;
     }

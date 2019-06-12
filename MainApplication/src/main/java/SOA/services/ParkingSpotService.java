@@ -1,8 +1,10 @@
 package SOA.services;
 
 import SOA.DAO.ParkingSpotDAO;
+import SOA.DTO.ParkingSpotDTO;
 import SOA.models.Employee;
 import SOA.models.ParkingSpot;
+import SOA.utils.DTOUtils;
 import SOA.utils.SecurityUtils;
 
 import javax.ejb.EJB;
@@ -53,5 +55,39 @@ public class ParkingSpotService {
 
     private List<ParkingSpot> getParkingSpots() {
         return parkingSpotDAO.getAllParkingSpots();
+    }
+
+
+    public ParkingSpotDTO getParkingSpotDTO(Integer id){
+        return parkingSpotDAO.getParkingSpotById(id)
+                .map(DTOUtils::changeParkingSpotToPArkingSpotDTO)
+                .orElseThrow(RuntimeException::new);
+    }
+
+    public ParkingSpotDTO getParkingSpotDTOByTicket(Integer id){
+        return parkingSpotDAO.getParkingSpotByTicketId(id)
+                .map(DTOUtils::changeParkingSpotToPArkingSpotDTO)
+                .orElseThrow(RuntimeException::new);
+    }
+
+    public List<ParkingSpotDTO> getParkingSpotDTO(){
+        return getParkingSpots()
+                .stream()
+                .map(DTOUtils::changeParkingSpotToPArkingSpotDTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<ParkingSpotDTO> getParkingSpotDTOByStreet(String street){
+        return parkingSpotDAO.getParkingSpotByStreet(street)
+                .stream()
+                .map(DTOUtils::changeParkingSpotToPArkingSpotDTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<ParkingSpotDTO> getParkingSpotDTOByRegion(Integer id){
+        return parkingSpotDAO.getParkingSpotByRegionId(id)
+                .stream()
+                .map(DTOUtils::changeParkingSpotToPArkingSpotDTO)
+                .collect(Collectors.toList());
     }
 }
