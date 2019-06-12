@@ -1,5 +1,5 @@
 
-package soa.services.soap.interfaces;
+package spot.soa.services.soap.interfaces;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

@@ -1,5 +1,5 @@
 
-package soa.services.soap.interfaces;
+package spot.soa.services.soap.interfaces;
 
 import java.util.ArrayList;
 import java.util.List;

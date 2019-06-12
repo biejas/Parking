@@ -1,5 +1,5 @@
 
-package soa.services.soap.implementations;
+package region.soa.services.soap.implementations;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -7,8 +7,9 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import soa.services.soap.interfaces.ObjectFactory;
-import soa.services.soap.interfaces.RegionDTOArray;
+
+import region.soa.services.soap.interfaces.ObjectFactory;
+import region.soa.services.soap.interfaces.RegionDTOArray;
 
 
 /**

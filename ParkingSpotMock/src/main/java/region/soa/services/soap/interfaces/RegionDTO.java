@@ -1,5 +1,5 @@
 
-package soa.services.soap.interfaces;
+package region.soa.services.soap.interfaces;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

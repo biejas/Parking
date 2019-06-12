@@ -1,5 +1,5 @@
 
-package soa.services.soap.implementations;
+package spot.soa.services.soap.implementations;
 
 import java.net.MalformedURLException;
 import java.net.URL;

@@ -1,5 +1,5 @@
 
-package soa.services.soap.implementations;
+package region.soa.services.soap.implementations;
 
 import java.net.MalformedURLException;
 import java.net.URL;

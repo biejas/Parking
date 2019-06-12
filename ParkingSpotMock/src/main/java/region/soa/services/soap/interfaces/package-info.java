@@ -1,2 +1,2 @@
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://Interfaces.SOAP.services.SOA/")
-package soa.services.soap.interfaces;
+package region.soa.services.soap.interfaces;

@@ -1,5 +1,8 @@
 
-package soa.services.soap.implementations;
+package spot.soa.services.soap.implementations;
+
+import region.soa.services.soap.interfaces.ObjectFactory;
+import spot.soa.services.soap.interfaces.ParkingSpotDTOArray;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -7,8 +10,6 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import soa.services.soap.interfaces.ObjectFactory;
-import soa.services.soap.interfaces.ParkingSpotDTOArray;
 
 
 /**
