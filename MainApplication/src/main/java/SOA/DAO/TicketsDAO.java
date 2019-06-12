@@ -31,28 +31,20 @@ public class TicketsDAO {
     }
 
     public void addTicket(Tickets ticket){
-        EntityTransaction entr=em.getTransaction();
-        entr.begin();
         try{
             em.persist(ticket);
-            entr.commit();
         }
         catch (Exception e){
             System.err.println("Blad przy dodawaniu rekordu" + e);
         }
-        em.close();
     }
 
     public void updateTicket(Tickets ticket){
-        EntityTransaction entr=em.getTransaction();
-        entr.begin();
         try{
             em.merge(ticket);
-            entr.commit();
         }
         catch (Exception e){
             System.err.println("Blad przy edycji rekordu" + e);
         }
-        em.close();
     }
 }

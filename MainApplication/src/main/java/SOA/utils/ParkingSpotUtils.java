@@ -14,4 +14,8 @@ public class ParkingSpotUtils {
         return TicketUtils.isExpired(parkingSpot.getTicket());
     }
 
+    public static boolean isNotAvailable(ParkingSpot parkingSpot){
+        return !parkingSpot.isAvailable();
+    }
+
 }

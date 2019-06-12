@@ -31,29 +31,21 @@ public class EmployeeDAO {
     }
 
     public void updateEmployee(Employee employee){
-        EntityTransaction entr=em.getTransaction();
-        entr.begin();
         try{
             em.merge(employee);
-            entr.commit();
         }
         catch (Exception e){
             System.err.println("Blad przy edycji rekordu" + e);
         }
-        em.close();
     }
 
     public void addEmployee(Employee employee){
-        EntityTransaction entr=em.getTransaction();
-        entr.begin();
         try{
             em.persist(employee);
-            entr.commit();
         }
         catch (Exception e){
             System.err.println("Blad przy dodawaniu rekordu" + e);
         }
-        em.close();
     }
 
 }

@@ -53,15 +53,12 @@ public class ParkingSpotDAO {
     }
 
     public void updateParkingSpot(ParkingSpot parkingSpot){
-        EntityTransaction entr=em.getTransaction();
-        entr.begin();
         try{
             em.merge(parkingSpot);
-            entr.commit();
         }
         catch (Exception e){
             System.err.println("Blad przy dodawaniu rekordu" + e);
         }
-        em.close();
     }
+
 }

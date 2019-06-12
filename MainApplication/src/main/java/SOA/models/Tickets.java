@@ -23,6 +23,10 @@ public class Tickets {
     @JoinColumn(name = "parkingSpotId")
     private ParkingSpot parkingSpot;
 
+    public void setTicketsId(Integer ticketsId) {
+        this.ticketsId = ticketsId;
+    }
+
     public int getTicketsId() {
         return ticketsId;
     }

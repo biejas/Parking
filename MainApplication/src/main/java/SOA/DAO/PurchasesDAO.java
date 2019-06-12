@@ -20,15 +20,11 @@ public class PurchasesDAO {
     }
 
     public void addPurchase(Purchases purchase){
-        EntityTransaction entr=em.getTransaction();
-        entr.begin();
         try{
             em.persist(purchase);
-            entr.commit();
         }
         catch (Exception e){
             System.err.println("Blad przy dodawaniu rekordu" + e);
         }
-        em.close();
     }
 }
