@@ -19,22 +19,37 @@ public class ParkingSpotController {
     @GET
     @Path("/{id}")
     @Produces("application/json")
-    public Response getPArkingSpot(@PathParam("id") Integer id){
-        return Response.ok(parkingSpotService.getParkingSpotDTO(id)).build();
+    public Response getParkingSpot(@PathParam("id") Integer id){
+        ParkingSpotDTO parkingSpotDTO = parkingSpotService.getParkingSpotDTO(id);
+        if (parkingSpotDTO == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(parkingSpotDTO).build();
+        }
     }
 
     @GET
     @Path("/")
     @Produces("application/json")
-    public List<ParkingSpotDTO> getPArkingSpots(){
-        return parkingSpotService.getParkingSpotDTO();
+    public Response getParkingSpots(){
+        List<ParkingSpotDTO> parkingSpotDTOS = parkingSpotService.getParkingSpotDTO();
+        if (!parkingSpotDTOS.isEmpty()) {
+            return Response.ok(parkingSpotDTOS).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @GET
-    @Path("/{street}")
+    @Path("/street/{street}")
     @Produces("application/json")
-    public List<ParkingSpotDTO> getPArkingSpotForStreet(@PathParam("street") String street){
-        return parkingSpotService.getParkingSpotDTOByStreet(street);
+    public Response getParkingSpotForStreet(@PathParam("street") String street) {
+        List<ParkingSpotDTO> parkingSpotDTOS = parkingSpotService.getParkingSpotDTOByStreet(street);
+        if (!parkingSpotDTOS.isEmpty()) {
+            return Response.ok(parkingSpotDTOS).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
 
