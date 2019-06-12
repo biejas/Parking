@@ -19,7 +19,7 @@ public class ParkingSpotController {
     @GET
     @Path("/{id}")
     @Produces("application/json")
-    public Response getPArkingSpot(@PathParam("id") Integer id){
+    public Response getParkingSpot(@PathParam("id") Integer id){
         return Response.ok(parkingSpotService.getParkingSpotDTO(id)).build();
     }
 
