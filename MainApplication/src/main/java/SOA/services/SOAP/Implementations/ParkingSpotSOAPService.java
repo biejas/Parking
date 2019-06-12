@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 
 @WebService(endpointInterface = "SOA.services.SOAP.Interfaces.ParkingSpotSOAPInterface")
-public class ParkingSpotSOAP implements ParkingSpotSOAPInterface {
+public class ParkingSpotSOAPService implements ParkingSpotSOAPInterface {
     @EJB
     private ParkingSpotService parkingSpotService;
 
