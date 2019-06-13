@@ -63,18 +63,18 @@ public class DashboardController {
     }
 
     public List<ParkingSpot> getParkingSpots() {
+        //messageService.getMessage();
         return parkingSpotService.getParkingSpotsForEmployee();
     }
 
     private boolean illegalParkingSpotState(ParkingSpot parkingSpot) {
-        if(!parkingSpot.isAvailable() && hasNoTicket(parkingSpot) || hasExpiredTicket(parkingSpot)) return true;
-        else return false;
+        return !parkingSpot.isAvailable() && hasNoTicket(parkingSpot) || hasExpiredTicket(parkingSpot);
     }
 
     public void informOfIllegalParkingSpotState(ParkingSpot parkingSpot){
         if(illegalParkingSpotState(parkingSpot)) {
             String message = "Miejsce" + parkingSpot.getParkingSpotId() +"na ulicy"+ parkingSpot.getStreet()+" jest zajęte bez biletu!";
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Uwaga!", message));
+            FacesContext.getCurrentInstance().addMessage("messages1", new FacesMessage(FacesMessage.SEVERITY_WARN, "Uwaga!", message));
         }
     }
 }

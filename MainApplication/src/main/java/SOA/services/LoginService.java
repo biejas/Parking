@@ -31,10 +31,14 @@ public class LoginService {
         }
         HttpSession httpSession = SecurityUtils.getSession();
         httpSession.setAttribute("employee", employee);
-        if(Objects.nonNull(employeeHttpSessionMap.get(employee))){
+        boolean isEmployee = employeeHttpSessionMap.entrySet()
+                .stream()
+                .anyMatch(e -> e.getKey().getEmployeeId().equals(employee.getEmployeeId()));
+        if(isEmployee){
             throw new SessionExistsException();
+        } else {
+            employeeHttpSessionMap.put(employee, httpSession);
         }
-        employeeHttpSessionMap.put(employee, httpSession);
     }
 
     public void logout() {
@@ -52,4 +56,5 @@ public class LoginService {
                 .ifPresent(e -> {e.getValue().invalidate(); employeeHttpSessionMap.remove(e.getKey());
                 });
     }
+
 }

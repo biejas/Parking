@@ -21,13 +21,13 @@ public class PasswordChangeController {
     public void changePassword(){
         if(!newPassword.equals(confirmedNewPassword))
         {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Uwaga!", "Podane hasła nie są takie same!"));
+            FacesContext.getCurrentInstance().addMessage("messagespass", new FacesMessage(FacesMessage.SEVERITY_WARN, "Uwaga!", "Podane hasła nie są takie same!"));
         } else {
             try{
                 employeeService.changePassword(username, newPassword);
                 SecurityUtils.redirect("index.html");
             } catch (Exception e) {
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Uwaga!", "Nie udało się zmienić hasła!"));
+                FacesContext.getCurrentInstance().addMessage("messages1", new FacesMessage(FacesMessage.SEVERITY_WARN, "Uwaga!", "Nie udało się zmienić hasła!"));
 
             }
         }

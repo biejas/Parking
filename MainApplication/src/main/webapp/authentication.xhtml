@@ -4,7 +4,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
-        <p:messages rendered="#{not loginController.isAuthenticated()}">
+        <p:messages for="messageauth" rendered="#{not loginController.isAuthenticated()}">
             Musisz być <h:link value="zalogowany" outcome="login"/> aby wejść na tą stronę.
         </p:messages>
     </ui:composition>

@@ -28,11 +28,8 @@
         <f:websocket channel="channel" onmessage="onMessage" />
 
         <h:panelGrid id="panel">
-            <p:messages id="messages" showDetail="true" closable="true" >
-                <p:autoUpdate />
-            </p:messages>
             <p:dataTable value="#{dashboardController.getParkingSpots()}" var="p">
-                #{dashboardController.informOfIllegalParkingSpotState(p)}
+                <f:viewAction id="messages1" action="#{dashboardController.informOfIllegalParkingSpotState(p)}"/>
                 <p:column headerText="Id" >
                     <h:outputText value="#{p.getParkingSpotId()}" />
                 </p:column>
@@ -49,6 +46,9 @@
                     <h:outputText value="#{dashboardController.getTicketTime(p.getTicket().getEndTime())}" />
                 </p:column>
             </p:dataTable>
+            <p:messages for="messages1" showDetail="true" closable="true" >
+                <p:autoUpdate />
+            </p:messages>
         </h:panelGrid>
     </ui:fragment>
 </h:body>

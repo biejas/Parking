@@ -28,10 +28,10 @@ public class LoginController {
             loginService.login(username, password);
             SecurityUtils.redirect("index.xhtml");
         } catch (InvalidCredentialsException e){
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", e.getMessage()));
+            FacesContext.getCurrentInstance().addMessage("messageslog", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", e.getMessage()));
         } catch (SessionExistsException e){
             invalidateSessionLink = true;
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", e.getMessage()));
+            FacesContext.getCurrentInstance().addMessage("messageslog", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", e.getMessage()));
         }
     }
 

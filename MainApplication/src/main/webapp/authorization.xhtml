@@ -3,7 +3,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-        <p:messages rendered="#{not loginController.isAdmin()}">
+        <p:messages for="messageadmin" rendered="#{not loginController.isAdmin()}">
             Brak uprawnień do wybranej strony.
         </p:messages>
     </ui:composition>

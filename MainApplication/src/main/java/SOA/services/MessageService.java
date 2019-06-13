@@ -2,7 +2,11 @@ package SOA.services;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.jms.*;
+import java.util.logging.Level;
 
 @Stateless
 public class MessageService {
@@ -12,7 +16,7 @@ public class MessageService {
     @Resource(mappedName = "java:/jms/queue/SOA_Parking")
     private Queue queue;
 
-    public void sendMessage(String message){
+    public void sendMessage(String message) {
         Connection connection = null;
         try {
             connection = connectionFactory.createConnection();
@@ -20,16 +24,19 @@ public class MessageService {
             MessageProducer messageProducer = session.createProducer(queue);
             connection.start();
             messageProducer.send(session.createTextMessage(message));
-        } catch (Exception e){
+
+
+        } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
-            if( connection != null){
-                try{
+            if (connection != null) {
+                try {
                     connection.close();
-                } catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
     }
+
 }
