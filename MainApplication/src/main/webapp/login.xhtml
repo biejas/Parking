@@ -23,6 +23,7 @@
             <br/>
             <h:outputLabel for="j_password" value="Hasło:"/>
             <h:inputSecret id="j_password" value="#{loginController.password}" required="true"/>
+            <br/>
             <h:commandButton value="Zaloguj" type="submit" action="#{loginController.login()}"/>
         </h:form>
     </h:panelGrid>

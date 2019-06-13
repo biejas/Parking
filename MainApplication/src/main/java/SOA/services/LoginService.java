@@ -25,19 +25,23 @@ public class LoginService {
     private Map<Employee, HttpSession> employeeHttpSessionMap = new HashMap<>();
 
     public void login(String username, String password) throws InvalidCredentialsException, SessionExistsException {
-        Employee employee = employeeService.getEmployee(username);
-        if(!DigestUtils.sha512Hex(password).equals(employee.getPassword())){
-            throw  new InvalidCredentialsException();
-        }
-        HttpSession httpSession = SecurityUtils.getSession();
-        httpSession.setAttribute("employee", employee);
-        boolean isEmployee = employeeHttpSessionMap.entrySet()
-                .stream()
-                .anyMatch(e -> e.getKey().getEmployeeId().equals(employee.getEmployeeId()));
-        if(isEmployee){
-            throw new SessionExistsException();
-        } else {
-            employeeHttpSessionMap.put(employee, httpSession);
+        try {
+            Employee employee = employeeService.getEmployee(username);
+            if (!DigestUtils.sha512Hex(password).equals(employee.getPassword())) {
+                throw new InvalidCredentialsException();
+            }
+            HttpSession httpSession = SecurityUtils.getSession();
+            httpSession.setAttribute("employee", employee);
+            boolean isEmployee = employeeHttpSessionMap.entrySet()
+                    .stream()
+                    .anyMatch(e -> e.getKey().getEmployeeId().equals(employee.getEmployeeId()));
+            if (isEmployee) {
+                throw new SessionExistsException();
+            } else {
+                employeeHttpSessionMap.put(employee, httpSession);
+            }
+        } catch (RuntimeException e){
+            throw new InvalidCredentialsException();
         }
     }
 
