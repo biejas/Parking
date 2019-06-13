@@ -11,8 +11,8 @@
     <h:form>
         <h:outputLabel for="parkingSpotId">Podaj Id miejsca parkingowego</h:outputLabel>
         <h:inputText id="parkingSpotId" value="#{parkingSpotController.parkingSpotId}"/>
-        <h:commandButton value="Take" action="#{parkingSpotController.take()}"/>
-        <h:commandButton value="Leave" action="#{parkingSpotController.leave()}"/>
+        <h:commandButton value="Zaparkuj" action="#{parkingSpotController.take()}"/>
+        <h:commandButton value="Odjedź" action="#{parkingSpotController.leave()}"/>
     </h:form>
 </h:body>
 </html>

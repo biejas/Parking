@@ -15,7 +15,7 @@
 
     <ui:fragment rendered="#{loginController.isAuthenticated()}">
         <h:form>
-            <p:poll interval="60" update="panel"/>
+            <p:poll interval="10" update="panel"/>
         </h:form>
         <ui:include src="menubar.xhtml"/>
         <h:panelGrid id="panel">
