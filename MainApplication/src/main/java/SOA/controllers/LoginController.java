@@ -52,15 +52,6 @@ public class LoginController {
 
     public boolean isNotEmpty(String str) {return !str.isEmpty();}
 
-    public void addEmployee() {
-        Employee employee = new Employee();
-        employee.setUsername("ewa");
-        employee.setPassword("3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79");
-        employee.setAdmin(false);
-        employee.setRegion(null);
-        EmployeeService employeeService = new EmployeeService();
-        employeeService.addEmployee(employee);
-    }
     public String getUsername() {
         return username;
     }
