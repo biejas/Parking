@@ -5,31 +5,24 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
-    <script type="text/javascript">
-        function onMessage(message, channel, event) {
-            console.log('jsf push message::' + message + ", channel ::" + channel + ", event::" + event);
-            document.getElementById("message").innerHTML = message;
-            updateForm();
-        }
-    </script>
 </h:head>
 <h:body>
     <ui:include src="authentication.xhtml"/>
 
     <ui:fragment rendered="#{loginController.isAuthenticated()}">
         <h:form>
-            <p:poll interval="10" update="panel"/>
+            <p:poll interval="2" update="panel"/>
         </h:form>
         <ui:include src="menubar.xhtml"/>
-
-        <div id="message" />
-        <f:websocket channel="channel" onmessage="onMessage" />
+        <p:messages for="messages1" showDetail="true" closable="true" >
+            <p:autoUpdate />
+        </p:messages>
 
         <h:panelGrid id="panel">
             <p:dataTable value="#{dashboardController.getParkingSpots()}" var="p">
-                <f:viewAction id="messages1" action="#{dashboardController.informOfIllegalParkingSpotState(p)}"/>
                 <p:column headerText="Id" >
                     <h:outputText value="#{p.getParkingSpotId()}" />
                 </p:column>
@@ -46,9 +39,6 @@
                     <h:outputText value="#{dashboardController.getTicketTime(p.getTicket().getEndTime())}" />
                 </p:column>
             </p:dataTable>
-            <p:messages for="messages1" showDetail="true" closable="true" >
-                <p:autoUpdate />
-            </p:messages>
         </h:panelGrid>
     </ui:fragment>
 </h:body>

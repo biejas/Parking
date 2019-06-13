@@ -10,7 +10,7 @@
 </h:head>
 <h:body>
     <h:panelGrid>
-        <p:messages id="messages" showDetail="true" closable="true" >
+        <p:messages for="messageslog" showDetail="true" closable="true" >
             <p:autoUpdate/>
             <h:form rendered="#{loginController.invalidateSessionLink}">
                 <h:commandLink action="#{loginController.invalidateSession(loginController.username)}"

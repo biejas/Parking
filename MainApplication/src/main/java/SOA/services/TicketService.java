@@ -90,7 +90,8 @@ public class TicketService {
                             scheduledFuture = Executors
                                     .newSingleThreadScheduledExecutor()
                                     .schedule(
-                                            () -> messageService.sendMessage("Bilet z miejsca numer " + ticketToExpire.getParkingSpot().getParkingSpotId() + " jest już nieważny."),
+                                            () -> {messageService.sendMessage("Bilet z miejsca numer " + ticketToExpire.getParkingSpot().getParkingSpotId() + " jest już nieważny.");
+                                            unregisterTicketFromParkingSpot(ticketToExpire);},
                                             ticketToExpire.getEndTime() - System.currentTimeMillis(),
                                             TimeUnit.MILLISECONDS
                                     );
@@ -114,11 +115,17 @@ public class TicketService {
         }
     }
 
+    public void unregisterTicketFromParkingSpot(Tickets ticket){
+        ParkingSpot parkingSpot = ticket.getParkingSpot();
+        parkingSpot.setTicket(null);
+        parkingSpotService.updateParkingSpot(parkingSpot);
+        ticket.setParkingSpot(null);
+        ticketsDAO.updateTicket(ticket);
+    }
+
     private boolean expiredFaster(Tickets ticket) {
         return ticket.getEndTime() < ticketToExpire.getEndTime();
     }
-
-
 
     public TicketsDTO getTicketDTO(Integer id){
         return ticketsDAO.getTicketById(id)
