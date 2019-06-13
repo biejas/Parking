@@ -18,11 +18,8 @@ import javax.xml.bind.annotation.XmlSeeAlso;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "ParkingSpotSOAPInterface", targetNamespace = "http://Interfaces.SOAP.services.SOA/")
+@WebService(name = "ParkingSpotSOAP", targetNamespace = "http://Interfaces.SOAP.services.SOA/", serviceName="ParkingSpotSOAPService")
 @SOAPBinding(style = SOAPBinding.Style.RPC)
-@XmlSeeAlso({
-    ObjectFactory.class
-})
 public interface ParkingSpotSOAPInterface {
 
 

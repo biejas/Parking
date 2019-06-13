@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ParkingSpotSOAPServiceService", targetNamespace = "http://Implementations.SOAP.services.SOA/", wsdlLocation = "http://localhost:8080/MainApplication/ParkingSpotSOAPService?wsdl")
-public class ParkingSpotSOAPServiceService
+@WebServiceClient(name = "ParkingSpotSOAPService", targetNamespace = "http://Implementations.SOAP.services.SOA/", wsdlLocation = "http://localhost:8080/MainApplication/ParkingSpotSOAPService?wsdl")
+public class ParkingSpotSOAPService
     extends Service
 {
 
-    private final static URL PARKINGSPOTSOAPSERVICESERVICE_WSDL_LOCATION;
-    private final static WebServiceException PARKINGSPOTSOAPSERVICESERVICE_EXCEPTION;
-    private final static QName PARKINGSPOTSOAPSERVICESERVICE_QNAME = new QName("http://Implementations.SOAP.services.SOA/", "ParkingSpotSOAPServiceService");
+    private final static URL PARKINGSPOTSOAPSERVICE_WSDL_LOCATION;
+    private final static WebServiceException PARKINGSPOTSOAPSERVICE_EXCEPTION;
+    private final static QName PARKINGSPOTSOAPSERVICE_QNAME = new QName("http://Implementations.SOAP.services.SOA/", "ParkingSpotSOAPService");
 
     static {
         URL url = null;
@@ -34,31 +34,31 @@ public class ParkingSpotSOAPServiceService
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
-        PARKINGSPOTSOAPSERVICESERVICE_WSDL_LOCATION = url;
-        PARKINGSPOTSOAPSERVICESERVICE_EXCEPTION = e;
+        PARKINGSPOTSOAPSERVICE_WSDL_LOCATION = url;
+        PARKINGSPOTSOAPSERVICE_EXCEPTION = e;
     }
 
-    public ParkingSpotSOAPServiceService() {
-        super(__getWsdlLocation(), PARKINGSPOTSOAPSERVICESERVICE_QNAME);
+    public ParkingSpotSOAPService() {
+        super(__getWsdlLocation(), PARKINGSPOTSOAPSERVICE_QNAME);
     }
 
-    public ParkingSpotSOAPServiceService(WebServiceFeature... features) {
-        super(__getWsdlLocation(), PARKINGSPOTSOAPSERVICESERVICE_QNAME, features);
+    public ParkingSpotSOAPService(WebServiceFeature... features) {
+        super(__getWsdlLocation(), PARKINGSPOTSOAPSERVICE_QNAME, features);
     }
 
-    public ParkingSpotSOAPServiceService(URL wsdlLocation) {
-        super(wsdlLocation, PARKINGSPOTSOAPSERVICESERVICE_QNAME);
+    public ParkingSpotSOAPService(URL wsdlLocation) {
+        super(wsdlLocation, PARKINGSPOTSOAPSERVICE_QNAME);
     }
 
-    public ParkingSpotSOAPServiceService(URL wsdlLocation, WebServiceFeature... features) {
-        super(wsdlLocation, PARKINGSPOTSOAPSERVICESERVICE_QNAME, features);
+    public ParkingSpotSOAPService(URL wsdlLocation, WebServiceFeature... features) {
+        super(wsdlLocation, PARKINGSPOTSOAPSERVICE_QNAME, features);
     }
 
-    public ParkingSpotSOAPServiceService(URL wsdlLocation, QName serviceName) {
+    public ParkingSpotSOAPService(URL wsdlLocation, QName serviceName) {
         super(wsdlLocation, serviceName);
     }
 
-    public ParkingSpotSOAPServiceService(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
+    public ParkingSpotSOAPService(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
         super(wsdlLocation, serviceName, features);
     }
 
@@ -85,10 +85,10 @@ public class ParkingSpotSOAPServiceService
     }
 
     private static URL __getWsdlLocation() {
-        if (PARKINGSPOTSOAPSERVICESERVICE_EXCEPTION!= null) {
-            throw PARKINGSPOTSOAPSERVICESERVICE_EXCEPTION;
+        if (PARKINGSPOTSOAPSERVICE_EXCEPTION != null) {
+            throw PARKINGSPOTSOAPSERVICE_EXCEPTION;
         }
-        return PARKINGSPOTSOAPSERVICESERVICE_WSDL_LOCATION;
+        return PARKINGSPOTSOAPSERVICE_WSDL_LOCATION;
     }
 
 }

@@ -7,10 +7,12 @@
 <h:head>
 </h:head>
 <h:body>
+    <h1>Zajmij miejsce parkingowe:</h1>
     <h:form>
-        <h:inputText value="#{parkingSpot.parkingSpotId}"/>
-        <h:commandButton value="Take" action="#{parkingSpot.take()}"/>
-        <h:commandButton value="Leave" action="#{parkingSpot.leave()}"/>
+        <h:outputLabel for="parkingSpotId">Podaj Id miejsca parkingowego</h:outputLabel>
+        <h:inputText id="parkingSpotId" value="#{parkingSpotController.parkingSpotId}"/>
+        <h:commandButton value="Take" action="#{parkingSpotController.take()}"/>
+        <h:commandButton value="Leave" action="#{parkingSpotController.leave()}"/>
     </h:form>
 </h:body>
 </html>
