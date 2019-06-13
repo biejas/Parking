@@ -22,13 +22,16 @@ import java.util.stream.Collectors;
 @Transactional
 public class TicketService {
     @EJB
-    private TicketsDAO ticketsDAO = new TicketsDAO();
+    private TicketsDAO ticketsDAO;
 
     @EJB
-    private MessageService messageService = new MessageService();
+    private MessageService messageService;
 
     @EJB
-    private RegionDAO regionDAO = new RegionDAO();
+    private RegionDAO regionDAO;
+
+    @EJB
+    private ParkingSpotService parkingSpotService;
 
     private Tickets ticketToExpire;
     private ScheduledFuture<?> scheduledFuture;
@@ -57,7 +60,9 @@ public class TicketService {
         findIllegallyOccupiedParkingSpot(parkingSpotSet).ifPresent(parkingSpot -> {
             ticket.setParkingSpot(parkingSpot);
             updateTicket(ticket);
-            messageService.sendMessage("Bilet numer " +ticketId+ "został zakupiony dla miejsca parkingowego numer " + parkingSpot.getParkingSpotId());
+            parkingSpot.setTicket(ticket);
+            parkingSpotService.updateParkingSpot(parkingSpot);
+            messageService.sendMessage("Bilet numer " +ticketId+ " został zakupiony dla miejsca parkingowego numer " + parkingSpot.getParkingSpotId());
         });
     }
 

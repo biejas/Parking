@@ -20,7 +20,7 @@ public class ParkingSpot {
     private Region region;
 
     @OneToOne
-    @JoinColumn(name = "parkingSpotId")
+    @JoinColumn(name = "ticketId")
     private Tickets ticket;
 
     public void setParkingSpotId(Integer parkingSpotId) {

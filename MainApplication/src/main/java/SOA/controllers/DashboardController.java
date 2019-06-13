@@ -21,7 +21,7 @@ public class DashboardController {
     @EJB
     private ParkingSpotService parkingSpotService;
 
-    public String getFormattedTime(long time){
+    public String getTicketTime(long time){
         if(time == 0) {
             return "No ticket";
         } else {
@@ -40,7 +40,7 @@ public class DashboardController {
 
     public void informOfIllegalParkingSpotState(ParkingSpot parkingSpot){
         if(illegalParkingSpotState(parkingSpot)) {
-            String message = "Miejsce" + parkingSpot.getParkingSpotId() +"na ulicy"+ parkingSpot.getStreet()+"jest zajęte bez biletu!";
+            String message = "Miejsce" + parkingSpot.getParkingSpotId() +"na ulicy"+ parkingSpot.getStreet()+" jest zajęte bez biletu!";
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Uwaga!", message));
         }
     }

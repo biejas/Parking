@@ -15,7 +15,7 @@
 
     <ui:fragment rendered="#{loginController.isAuthenticated()}">
         <h:form>
-            <p:poll interval="60" update="panel"/>
+            <p:poll interval="10" update="panel"/>
         </h:form>
         <ui:include src="menubar.xhtml"/>
         <h:panelGrid id="panel">
@@ -36,7 +36,7 @@
                     <h:outputText value="#{p.isAvailable()}" />
                 </p:column>
                 <p:column headerText="Czas wygaśnięcia biletu" >
-                    <h:outputText value="#{dashboardController.getFormattedTime(p.ticket.endTime)}" />
+                    <h:outputText value="#{dashboardController.getTicketTime(p.getTicket().getEndTime())}" />
                 </p:column>
             </p:dataTable>
         </h:panelGrid>

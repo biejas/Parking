@@ -36,7 +36,7 @@
                     <h:outputText value="#{p.isAvailable()}" />
                 </p:column>
                 <p:column headerText="Czas wygaśnięcia biletu" >
-                    <h:outputText value="#{dashboardController.getFormattedTime(p.ticket.endTime)}" />
+                    <h:outputText value="#{dashboardController.getTicketTime(p.getTicket().getEndTime())}" />
                 </p:column>
             </p:dataTable>
         </h:panelGrid>
