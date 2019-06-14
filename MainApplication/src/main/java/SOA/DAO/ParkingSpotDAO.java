@@ -7,6 +7,7 @@ import javax.ejb.Startup;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Singleton
 @Startup
@@ -40,7 +41,7 @@ public class ParkingSpotDAO {
     }
 
     public List<ParkingSpot> getParkingSpotByRegionId(Integer id){
-        TypedQuery<ParkingSpot> query = em.createQuery("SELECT e.parkingSpotSet from Region e WHERE e.regionId=:id", ParkingSpot.class)
+        TypedQuery<ParkingSpot> query = em.createQuery("SELECT e from ParkingSpot e WHERE e.region.regionId=:id", ParkingSpot.class)
                     .setParameter("id", id);
         return query.getResultList();
     }

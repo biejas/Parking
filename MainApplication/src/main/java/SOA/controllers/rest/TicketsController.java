@@ -22,11 +22,15 @@ public class TicketsController {
     @Path("/{id}")
     @Produces("application/json")
     public Response getTicket(@PathParam("id") Integer id){
+        try{
         TicketsDTO ticketsDTO= ticketService.getTicketDTO(id);
         if (ticketsDTO==null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
             return Response.ok(ticketsDTO).build();
+        }
+        }catch(RuntimeException e){
+            return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
 
@@ -34,11 +38,14 @@ public class TicketsController {
     @Path("/")
     @Produces("application/json")
     public Response getTickets(){
+        try{
         List<TicketsDTO> ticketsDTOS= ticketService.getTicketDTO();
         if (ticketsDTOS.isEmpty()) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
             return Response.ok(ticketsDTOS).build();
+        }}catch(RuntimeException e){
+            return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
 
@@ -46,11 +53,14 @@ public class TicketsController {
     @Path("/{id}/parkingspot")
     @Produces("application/json")
     public Response getParkingSpotForTicket(@PathParam("id") Integer id){
+        try{
         ParkingSpotDTO parkingSpotDTO =parkingSpotService.getParkingSpotDTOByTicket(id);
         if (parkingSpotDTO==null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
             return Response.ok(parkingSpotDTO).build();
+        }}catch(RuntimeException e){
+            return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
 
@@ -58,7 +68,11 @@ public class TicketsController {
     @Path("/")
     @Consumes("application/json")
     public Response addTicket(TicketsDTO ticketsDTO){
+        try{
         ticketService.addTicket(ticketsDTO);
         return Response.status(Response.Status.CREATED).build();
+        }catch(RuntimeException e){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 }

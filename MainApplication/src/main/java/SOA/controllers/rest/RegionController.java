@@ -23,11 +23,14 @@ public class RegionController {
     @GET
     @Produces("application/json")
     public Response getRegions(){
+        try{
         List<RegionDTO> regionDTOS= regionService.getRegionDTO();
         if (regionDTOS.isEmpty()) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
             return Response.ok(regionDTOS).build();
+        }}catch(RuntimeException e){
+            return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
 
@@ -35,23 +38,29 @@ public class RegionController {
     @Path("/{id}")
     @Produces("application/json")
     public Response getRegion(@PathParam("id") Integer id){
+        try{
         RegionDTO regionDTO = regionService.getRegionDTO(id);
         if (regionDTO == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
             return Response.ok(regionDTO).build();
-        }
+        }}catch(RuntimeException e){
+        return Response.status(Response.Status.NOT_FOUND).build();
+    }
     }
 
     @GET
     @Path("/{id}/parkingspot")
     @Produces("application/json")
     public Response getParkingSpotForRegion(@PathParam("id") Integer id){
+        try{
         List<ParkingSpotDTO> parkingSpotDTOS= parkingSpotService.getParkingSpotDTOByRegion(id);
         if (parkingSpotDTOS.isEmpty()) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
             return Response.ok(parkingSpotDTOS).build();
+        }}catch(RuntimeException e){
+            return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
 
